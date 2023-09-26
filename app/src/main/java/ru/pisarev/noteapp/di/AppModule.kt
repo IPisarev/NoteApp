@@ -10,6 +10,7 @@ import ru.pisarev.noteapp.feature_note.data.data_source.NoteDao
 import ru.pisarev.noteapp.feature_note.data.data_source.NoteDataBase
 import ru.pisarev.noteapp.feature_note.data.repository.NoteRepositoryImpl
 import ru.pisarev.noteapp.feature_note.domain.repository.NoteRepository
+import ru.pisarev.noteapp.feature_note.domain.use_case.AddNoteUseCase
 import ru.pisarev.noteapp.feature_note.domain.use_case.DeleteNotesUseCase
 import ru.pisarev.noteapp.feature_note.domain.use_case.GetNotesUseCase
 import ru.pisarev.noteapp.feature_note.domain.use_case.NoteUseCases
@@ -40,7 +41,8 @@ object AppModule {
     fun provideNoteUseCases(repository: NoteRepository): NoteUseCases {
         return NoteUseCases(
             getNotesUseCase = GetNotesUseCase(repository),
-            deleteNotesUseCase = DeleteNotesUseCase(repository)
+            deleteNotesUseCase = DeleteNotesUseCase(repository),
+            addNoteUseCase = AddNoteUseCase(repository)
         )
     }
 }
