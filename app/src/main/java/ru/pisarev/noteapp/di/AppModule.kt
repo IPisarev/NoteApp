@@ -12,6 +12,7 @@ import ru.pisarev.noteapp.feature_note.data.repository.NoteRepositoryImpl
 import ru.pisarev.noteapp.feature_note.domain.repository.NoteRepository
 import ru.pisarev.noteapp.feature_note.domain.use_case.AddNoteUseCase
 import ru.pisarev.noteapp.feature_note.domain.use_case.DeleteNotesUseCase
+import ru.pisarev.noteapp.feature_note.domain.use_case.GetNoteUseCase
 import ru.pisarev.noteapp.feature_note.domain.use_case.GetNotesUseCase
 import ru.pisarev.noteapp.feature_note.domain.use_case.NoteUseCases
 import javax.inject.Singleton
@@ -42,7 +43,8 @@ object AppModule {
         return NoteUseCases(
             getNotesUseCase = GetNotesUseCase(repository),
             deleteNotesUseCase = DeleteNotesUseCase(repository),
-            addNoteUseCase = AddNoteUseCase(repository)
+            addNoteUseCase = AddNoteUseCase(repository),
+            getNoteUseCase = GetNoteUseCase(repository)
         )
     }
 }
