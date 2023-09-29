@@ -7,8 +7,6 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 import ru.pisarev.noteapp.feature_note.domain.model.Note
-
-
 @Dao
 interface NoteDao {
     @Query("SELECT * FROM note")

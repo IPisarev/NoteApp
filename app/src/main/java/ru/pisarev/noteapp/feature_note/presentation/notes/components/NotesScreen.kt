@@ -31,6 +31,7 @@ import androidx.navigation.NavController
 import kotlinx.coroutines.launch
 import ru.pisarev.noteapp.feature_note.presentation.notes.NotesEvent
 import ru.pisarev.noteapp.feature_note.presentation.notes.NotesViewModel
+import ru.pisarev.noteapp.feature_note.presentation.util.Screen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -46,7 +47,7 @@ fun NotesScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-
+                          navController.navigate(Screen.AddEditNoteScreen.route)
                 },
                 contentColor = MaterialTheme.colorScheme.primary
             ) {
@@ -106,7 +107,10 @@ fun NotesScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-
+                                       navController.navigate(
+                                           Screen.AddEditNoteScreen.route +
+                                           "?noteId=${note.id}&noteColor=${note.color}"
+                                       )
                             },
                         onDeleteClick = {
                             viewModel.onEvent(NotesEvent.DeleteNote(note))
