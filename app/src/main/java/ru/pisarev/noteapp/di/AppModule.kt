@@ -6,7 +6,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ru.pisarev.noteapp.feature_note.data.data_source.NoteDao
 import ru.pisarev.noteapp.feature_note.data.data_source.NoteDataBase
 import ru.pisarev.noteapp.feature_note.data.repository.NoteRepositoryImpl
 import ru.pisarev.noteapp.feature_note.domain.repository.NoteRepository
